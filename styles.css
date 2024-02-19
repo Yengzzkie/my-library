@@ -105,17 +105,31 @@ button:hover {
 }
 
 .confirm-btn {
+  border-radius: 15px;
+  padding: 10px 40px;
   bottom: 15%;
-  left: 50%;
+  left: 10%;
+}
+
+.cancel-btn {
+  border-radius: 15px;
+  padding: 10px 40px;
+  bottom: 15%;
+  right: 10%;
 }
 
 dialog {
+  background: #f7ffff;
   border: none;
   border-radius: 15px;
   padding: 4rem 1rem;
   margin: auto;
   width: 25vw;
   height: 40vh;
+}
+
+.book-modal {
+  height: 20vh;
 }
 
 dialog::backdrop {
