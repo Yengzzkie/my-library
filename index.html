@@ -3,27 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/stack-of-books.png" type="image/png">
     <link rel="stylesheet" href="styles.css">
     <title>My Library</title>
   </head>
   <body>
-    <h1>My Library</h1>
-    <button class="add-book-btn" onclick="">Add Book</button>
+    <div class="header">
+        <h2>My Library</h2>
+        <img src="assets/stack-of-books.png" alt="stack-of-books" class="header-icon">
+        <button class="add-book-btn round-btn">+</button>
+    </div>
+
+    <div class="confirmation-dialog">Has been succesfully deleted.</div>
 
     <dialog class="modal">
       <div>
         <form>
           <label for="title"
             >Title:
-            <input type="name" placeholder="Title" id="title" />
+            <input type="name" placeholder="Title" id="title" required/>
           </label>
           <label for="author"
             >Author:
-            <input type="name" placeholder="Author" id="author" />
+            <input type="name" placeholder="Author" id="author" required/>
           </label>
           <label for="pages"
             >Pages:
-            <input type="number" placeholder="Pages" id="pages" />
+            <input type="number" placeholder="Pages" id="pages" required/>
           </label>
           <label for="isRead"
             >Read:
@@ -31,8 +37,7 @@
           </label>
           <button type="submit" id="submitButton">Add</button>
         </form>
-
-        <button class="close-modal">Close</button>
+        <button class="close-modal">X</button>
       </div>
     </dialog>
 

@@ -1,62 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-  }
-  
-  body {
-    background: #ebf2f5;
-    padding: 1rem;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --box-shadow: 0.5rem 0.5rem 0.9rem #ccc, -0.5rem -0.5rem 0.9rem #fff;;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background: #ebf2f5;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  box-shadow: inset var(--box-shadow);
+  height: 5rem;
+  padding: 1rem;
+}
+
+h1 {
+  margin: auto;
+}
+
+.header-icon {
+  margin-left: 10px;
+  width: 50px;
+}
+
+.book {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.2rem;
+  border-radius: 20px;
+  padding: 2rem 1rem;
+  width: 300px;
+  margin: 20px auto;
+  box-shadow: var(--box-shadow);
+}
+
+button {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 100%;
+  box-shadow: var(--box-shadow);
+  cursor: pointer;
+  transition: box-shadow .3s;
+}
+
+.delete-book {
+  top: 10%;
+  right: 5%;
+  width: 35px;
+  height: 35px;
+  padding: 10px;
+}
+
+#submitButton {
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 35px;
+  height: 35px;
+}
+
+.close-modal {
+  top: 5%;
+  right: 5%;
+  width: 25px;
+  height: 25px;
+  padding: 10px;
+}
+
+button:hover {
+  box-shadow: none;
+}
+
+.round-btn {
+  bottom: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 70px;
+  width: 70px;
+  border-radius: 100%;
+  box-shadow: var(--box-shadow);
+  cursor: pointer;
+  transition: box-shadow .3s;
+}
+
+.round-btn:hover {
+  box-shadow: none;
+}
+
+dialog {
+  border: none;
+  border-radius: 15px;
+  padding: 4rem 1rem;
+  margin: auto;
+  width: 25vw;
+  height: 35vh;
+}
+
+dialog::backdrop {
+  backdrop-filter: blur(5px);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+
+  input {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
   }
 
-  h1 {
-    text-align: center;
-  }
-  
-  .book {
+  label {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    font-size: 1.2rem;
-    border-radius: 20px;
-    padding: 2rem 1rem;
-    width: 300px;
-    margin: 20px auto;
-    box-shadow: 0.5rem 0.5rem 0.9rem #888b8c, -0.5rem -0.5rem 0.9rem #d5e7ed;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 10px 0;
   }
-  
-  button {
-    align-self: center;
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0.5rem 0.5rem 0.9rem #ccc;
-    margin: 10px;
-    width: 100px;
-    padding: 10px 15px;
-  }
-  
+}
+
+.objContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.confirmation-dialog {
+  visibility: hidden;
+  background: yellowgreen;
+  text-align: center;
+  font-size: 1.1rem;
+  border: 3px solid #ccc;
+  border-radius: 10px;
+  width: 70vw;
+  height: auto;
+  padding: 10px;
+  margin: 50px auto 10px;
+  z-index: 999;
+}
+
+.confirmation-dialog.show {
+  visibility: visible;
+}
+
+@media only screen and (max-width: 1024px) {
   dialog {
-    border: none;
-    border-radius: 15px;
-    padding: 2rem 1rem;
-    margin: auto;
+    width: 60vw;
+    height: 40vh;
   }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-  
-    input {
-      width: 100%;
-    }
-  
-    label {
-      margin: 10px 0;
-    }
-  }
-  
-  .objContainer {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  }
-  
+}
