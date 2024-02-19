@@ -104,13 +104,18 @@ button:hover {
   box-shadow: none;
 }
 
+.confirm-btn {
+  bottom: 15%;
+  left: 50%;
+}
+
 dialog {
   border: none;
   border-radius: 15px;
   padding: 4rem 1rem;
   margin: auto;
   width: 25vw;
-  height: 35vh;
+  height: 40vh;
 }
 
 dialog::backdrop {

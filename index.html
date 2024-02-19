@@ -14,25 +14,22 @@
         <button class="add-book-btn round-btn">+</button>
     </div>
 
-    <div class="confirmation-dialog">Has been succesfully deleted.</div>
+    <div class="confirmation-dialog"></div>
 
     <dialog class="modal">
       <div>
         <form>
-          <label for="title"
-            >Title:
+          <h3>Enter your book info</h3>
+          <label for="title">
             <input type="name" placeholder="Title" id="title" required/>
           </label>
-          <label for="author"
-            >Author:
+          <label for="author">
             <input type="name" placeholder="Author" id="author" required/>
           </label>
-          <label for="pages"
-            >Pages:
+          <label for="pages">
             <input type="number" placeholder="Pages" id="pages" required/>
           </label>
-          <label for="isRead"
-            >Read:
+          <label for="isRead">Status:
             <input type="checkbox" id="isRead" />
           </label>
           <button type="submit" id="submitButton">Add</button>
@@ -45,9 +42,9 @@
       <div>
         <p>
           Are you sure you want to delete this book?
-          <button class="confirm-btn">Confirm</button>
-          <button class="cancel-btn">Cancel</button>
         </p>
+        <button class="confirm-btn">Confirm</button>
+        <button class="cancel-btn">Cancel</button>
       </div>
     </dialog>
 

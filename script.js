@@ -72,17 +72,8 @@ let myLibrary = [
       deleteBtn.classList.add("delete-book");
       deleteBtn.textContent = "X";
 
-      deleteBtn.addEventListener("click", () => {
-        const confirmDialog = document.querySelector('.confirmation-dialog');
-        
-        confirmDialog.classList.add('show')
+      deleteBtn.addEventListener("click", () => { 
         removeBookFromLibrary(index);
-        
-        setTimeout(() => {
-            confirmDialog.classList.remove('show')
-        }, 1500)
-
-        console.log(`Index ${index} succesfully deleted`);
       });
   
       bookObj.appendChild(p);
@@ -93,11 +84,43 @@ let myLibrary = [
   }
   
   // remove book from array
-  function removeBookFromLibrary(index) {
-    myLibrary.splice(index, 1);
-    console.log(myLibrary);
-    renderLibrary();
-  }
+const bookModal = document.querySelector('.book-modal');
+const confirmBtn = document.querySelector('.confirm-btn');
+const cancelBtn = document.querySelector('.cancel-btn');
+
+confirmBtn.addEventListener('click', () => {
+    if (currentIndexToDelete !== null) {
+        const confirmDialog = document.querySelector('.confirmation-dialog');
+        const deletedBookTitle = myLibrary[currentIndexToDelete].title;
+
+        myLibrary.splice(currentIndexToDelete, 1);
+        confirmDialog.classList.add('show')
+        confirmDialog.textContent = `"${deletedBookTitle}" has been succesfully deleted!`;
+        console.log(currentIndexToDelete);
+        setTimeout(() => {
+            confirmDialog.classList.remove('show')
+        }, 2000);
+
+        renderLibrary();
+    };
+    bookModal.close();
+});
+
+cancelBtn.addEventListener('click', () => {
+    bookModal.close();
+});
+
+function removeBookFromLibrary(index) {
+    const bookToDelete = myLibrary[index];
+
+    const confirmationText = document.querySelector('.book-modal p');
+    confirmationText.textContent = `Are you sure you want to delete "${bookToDelete.title}" by ${bookToDelete.author}?`;
+
+    bookModal.showModal();
+
+    currentIndexToDelete = index;
+}
+
   
   // initialize the library array on DOM load
   renderLibrary();
