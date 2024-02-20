@@ -153,21 +153,22 @@ dialog::backdrop {
 form {
   display: flex;
   flex-direction: column;
+  margin-top: 15px;
 
-  input {
+  /* input {
     border: 1px solid #ccc;
     border-radius: 5px;
     width: 100%;
-    padding: 5px;
+    padding: 5px 10px;
     margin-top: 5px;
-  }
+  } */
 
-  label {
+  /* label {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     margin: 10px 0;
-  }
+  } */
 }
 
 .objContainer {
@@ -196,10 +197,39 @@ form {
 @media only screen and (max-width: 1024px) {
   dialog {
     width: 60vw;
-    height: 40vh;
   }
 }
 
 .button-wrapper {
   flex-direction: column;
+}
+
+
+
+
+.input-wrapper {
+  position: relative;
+  margin: 15px;
+}
+
+.input-wrapper input {
+  border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    padding: 5px 10px;
+}
+
+.input-wrapper label {
+  position: absolute;
+  left: 3%;
+  top: 50%;
+  color: #8d8d8d;
+  transform: translateY(-50%);
+  transition: all .5s;
+}
+
+.input-wrapper input:focus ~ label, .input-wrapper input:valid ~ label  {
+  top: -5px;
+  font-size: 15px;
+  background: #fff;
 }

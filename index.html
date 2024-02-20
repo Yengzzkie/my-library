@@ -18,20 +18,22 @@
 
     <dialog class="modal">
       <div>
+        <h3>Enter your book info</h3>
         <form>
-          <h3>Enter your book info</h3>
-          <label for="title">
-            <input type="name" placeholder="Title" id="title" required/>
-          </label>
-          <label for="author">
-            <input type="name" placeholder="Author" id="author" required/>
-          </label>
-          <label for="pages">
-            <input type="number" placeholder="Pages" id="pages" required/>
-          </label>
-          <label for="isRead">Status:
-            <input type="checkbox" id="isRead" />
-          </label>
+          <div class="input-wrapper">
+            <input type="name" placeholder="" id="title" required/>
+            <label for="title">Title</label>
+          </div>
+          <div class="input-wrapper">
+            <input type="name" id="author" required/>
+            <label for="author">Author</label>
+          </div>
+          <div class="input-wrapper">
+            <input type="number" id="pages" required/>
+            <label for="pages">Pages</label>
+          </div>
+          <label for="isRead">Status:</label>
+          <input type="checkbox" id="isRead" />
           <button type="submit" id="submitButton">Add</button>
         </form>
         <button class="close-modal">X</button>
