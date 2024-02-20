@@ -95,7 +95,7 @@ confirmBtn.addEventListener('click', () => {
 
         myLibrary.splice(currentIndexToDelete, 1);
         confirmDialog.classList.add('show')
-        confirmDialog.textContent = `"${deletedBookTitle}" has been succesfully deleted!`;
+        confirmDialog.innerHTML = `<img src="assets/check.png"> \"${deletedBookTitle}\" has been successfully deleted!`;
         console.log(currentIndexToDelete);
         setTimeout(() => {
             confirmDialog.classList.remove('show')

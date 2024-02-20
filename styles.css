@@ -177,8 +177,11 @@ form {
 }
 
 .confirmation-dialog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   visibility: hidden;
-  background: yellowgreen;
+  background: #6bc62a;
   text-align: center;
   font-size: 1.1rem;
   border: 3px solid #ccc;
@@ -187,7 +190,11 @@ form {
   height: auto;
   padding: 10px;
   margin: 50px auto 10px;
-  z-index: 999;
+  
+  & img {
+    width: 30px;
+    margin: 10px;
+  }
 }
 
 .confirmation-dialog.show {
