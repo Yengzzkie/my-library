@@ -48,8 +48,13 @@ h1 {
   box-shadow: var(--box-shadow);
 }
 
+.button-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 25px;
+}
+
 button {
-  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,6 +66,7 @@ button {
 }
 
 .delete-book {
+  position: absolute;
   top: 10%;
   right: 5%;
   width: 35px;
@@ -69,6 +75,7 @@ button {
 }
 
 #submitButton {
+  position: absolute;
   bottom: 0;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -77,6 +84,7 @@ button {
 }
 
 .close-modal {
+  position: absolute;
   top: 5%;
   right: 5%;
   width: 25px;
@@ -89,6 +97,7 @@ button:hover {
 }
 
 .round-btn {
+  position: absolute;
   bottom: -50%;
   left: 50%;
   transform: translateX(-50%);
@@ -125,11 +134,16 @@ dialog {
   padding: 4rem 1rem;
   margin: auto;
   width: 25vw;
-  height: 40vh;
 }
 
-.book-modal {
-  height: 20vh;
+.book-modal div{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  button {
+    margin: 10px;
+  }
 }
 
 dialog::backdrop {
@@ -184,4 +198,8 @@ form {
     width: 60vw;
     height: 40vh;
   }
+}
+
+.button-wrapper {
+  flex-direction: column;
 }
